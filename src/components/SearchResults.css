@@ -1,0 +1,27 @@
+#row {
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+}
+
+.card {
+    display: inline-block;
+    position: relative;
+    perspective: 800px;
+    width: 18rem;
+    height: 30rem;
+    margin: 15px;
+}
+
+.image {
+    width: 18rem;
+    height: 22rem;
+}
+
+.button {
+    font-size: 8px;
+    height: 38px;
+    position: fixed;
+    left: 125px;
+    bottom: 10px;
+}
