@@ -1,14 +1,14 @@
 #row {
     display: flex;
     flex-direction: row;
-    margin: 25px;
+    margin: auto;
 }
 
 .card {
     display: inline-block;
     position: relative;
     perspective: 800px;
-    width: 18rem;
+    width: 17rem;
     height: 30rem;
     margin: 15px;
 }
@@ -22,6 +22,6 @@
     font-size: 8px;
     height: 38px;
     position: fixed;
-    left: 125px;
+    left: 115px;
     bottom: 10px;
 }
