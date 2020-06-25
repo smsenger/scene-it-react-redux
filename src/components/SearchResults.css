@@ -1,3 +1,7 @@
+.Container {
+    border-bottom: 1px solid #b6b7db;
+}
+
 #row {
     display: flex;
     flex-direction: row;
@@ -9,19 +13,45 @@
     position: relative;
     perspective: 800px;
     width: 17rem;
-    height: 30rem;
-    margin: 15px;
+    height: 32rem;
+    margin: auto;
+    margin-top: 25px;
 }
 
 .image {
     width: 18rem;
     height: 22rem;
+    border-bottom: 1px solid red;
+}
+
+.flex-buttons {
+    display: flex;
 }
 
 .button {
     font-size: 8px;
     height: 38px;
     position: fixed;
-    left: 115px;
-    bottom: 10px;
+    left: 35px;
+    bottom: 10px; 
+}
+
+.button2 {
+    font-size: 8px;
+    height: 38px;
+    position: fixed;
+    left: 175px;
+    bottom: 10px; 
+}
+
+.input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1.5px solid red;
+}
+
+.input-button {
+    border: 1.5px solid red;
+    background-color: white;
+    color: #b6b7db;
 }

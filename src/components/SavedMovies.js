@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { saveMovie } from '../redux/actions'
+import { deleteMovie } from '../redux/actions'
 import SearchResults from './SearchResults'
+import { Link } from 'react-router-dom';
+import './SearchResults.css'
 
 
 
@@ -14,7 +16,11 @@ constructor(props) {
 
     render() {
     return (
-        <div>
+        <div className="Container">
+            <div style={{borderBottom: '1px solid red'}}>
+            <h1 style={{color: '#b6b7db'}}>Scene It</h1>
+                    <Link style={{color: '#b6b7db'}} to="/">Home</Link>
+            </div>
         {this.props.movies.map(movie => {
             return <SearchResults movie={movie} />
         })}
@@ -24,11 +30,13 @@ constructor(props) {
 }
 }
 
-// const mapDispatchToProps = {
-//     saveMovie
-// }
 
 const mapStateToProps = (state) => {
     return {movies: state.movies}
 }
-export default connect(mapStateToProps, null)(SavedMovies) 
+
+const mapDispatchToProps = {
+    deleteMovie
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SavedMovies) 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { saveMovie } from '../redux/actions'
+import { deleteMovie } from '../redux/actions'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -16,30 +17,33 @@ class SearchResults extends React.Component {
 constructor(props) {
     super(props)
 }
-
     render() {
-        const { Poster, Title, Year, imdbID, Movie } = this.props.movie
+        const { Poster, Title, Year, imdbID } = this.props.movie
     return (
     <Container>
-        <Row id="row">
-            <Col md="auto" id="row">
-                <Card className="card">
+        <Row>
+            <Col md="auto">
+                <Card className="card" style={{border: '1px solid red'}}>
                 <Card.Img className="image" variant="top" id="poster" alt="movie poster" src={Poster}/>
                 <Card.Body>
-                    <Card.Title style={{ fontSize: '25px' }}>{Title}: {Year}</Card.Title>
-                    <Button style={{fontSize: '15px'}}className="button" variant="primary" id={imdbID} onClick={() => this.props.saveMovie(this.props.movie)}>Add Movie</Button>
+                    <Card.Title style={{ fontSize: '25px', color: 'red' }}>{Title}: {Year}</Card.Title>
+                    <div className="flex-buttons">
+                    <Button style={{fontSize: '15px', backgroundColor: '#b6b7db', border: '1px solid red'}}className="button" variant="primary" id={imdbID} onClick={() => this.props.saveMovie(this.props.movie)}>Add Movie</Button>
+                    <Button style={{fontSize: '15px', backgroundColor: '#b6b7db', border: '1px solid red'}} className="button2" variant="primary" id={imdbID} onClick={() => this.props.deleteMovie(this.props.movie)}>Remove Movie</Button>
+                    </div>
                 </Card.Body>
                 </Card>
             </Col>
         </Row>
-    </Container>
+    </Container> 
     )
 
 }
 }
 
 const mapDispatchToProps = {
-    saveMovie
+    saveMovie,
+    deleteMovie
 }
 
 export default connect(null, mapDispatchToProps)(SearchResults) 

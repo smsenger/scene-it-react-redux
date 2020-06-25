@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import SearchResults from './SearchResults'
 import { Link } from 'react-router-dom';
+import SearchResults from './SearchResults'
+import './SearchResults.css'
 
 export default class SearchRequest extends Component {
     constructor(props) {
@@ -35,21 +31,24 @@ export default class SearchRequest extends Component {
             })
         }
 
+        saveMovie = (movie) => {
+
+        }
+
         render() {
             return (
                 <div>
-                    <h1>Scene It</h1>
+                <div style={{borderBottom: '1px solid #b6b7db'}}>
+                    <h1 style={{color: '#b6b7db'}}>Scene It</h1>
+                    <Link style={{marginRight: '20px', color: '#b6b7db'}} to="/saved">Saved Movies</Link>
                     <form onSubmit={this.handleSubmit}>
-                        <input onChange={this.handleChange} value={this.state.inputValue} />
-                        <button type="submit">Search</button>
+                        <input className="input" onChange={this.handleChange} value={this.state.inputValue} />
+                        <button className="input-button" type="submit">Search</button>
                     </form>
-                    <Link style={{marginRight: '20px'}} to="/saved">Saved Movies</Link><Link to="/">Home</Link>
-                    <div>
+                </div>
                         {this.state.movies.map(movie => {
                             return <SearchResults movie={movie} />
                         })}
-                    </div>
-
                 </div>
             )
         }

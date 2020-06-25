@@ -1,10 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+import { getLocalStorage } from './redux/actions'
 import './App.css';
 import SearchRequest from './components/SearchRequest'
 import SavedMovies from './components/SavedMovies'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 function App() {
   return (
     <div className="App">
@@ -19,5 +23,8 @@ function App() {
     </div>
   );
 }
+const mapDispatchToProps = {
+  getLocalStorage
+}
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);
