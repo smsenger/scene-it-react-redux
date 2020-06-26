@@ -22,7 +22,7 @@ constructor(props) {
     return (
     <Container>
         <Row>
-            <Col md="auto">
+            <Col md="auto" id="row">
                 <Card className="card" style={{border: '1px solid red'}}>
                 <Card.Img className="image" variant="top" id="poster" alt="movie poster" src={Poster}/>
                 <Card.Body>
